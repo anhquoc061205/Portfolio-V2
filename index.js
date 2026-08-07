@@ -360,12 +360,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         prevBtn.addEventListener("click", () => {
             if (marqueeTrack) marqueeTrack.classList.add("paused");
-            marqueeWrapper.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+            const maxScroll = marqueeWrapper.scrollWidth - marqueeWrapper.clientWidth;
+            if (marqueeWrapper.scrollLeft <= 25) {
+                marqueeWrapper.scrollTo({ left: maxScroll, behavior: "smooth" });
+            } else {
+                marqueeWrapper.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+            }
         });
 
         nextBtn.addEventListener("click", () => {
             if (marqueeTrack) marqueeTrack.classList.add("paused");
-            marqueeWrapper.scrollBy({ left: scrollAmount, behavior: "smooth" });
+            const maxScroll = marqueeWrapper.scrollWidth - marqueeWrapper.clientWidth;
+            if (marqueeWrapper.scrollLeft >= maxScroll - 35) {
+                marqueeWrapper.scrollTo({ left: 0, behavior: "smooth" });
+            } else {
+                marqueeWrapper.scrollBy({ left: scrollAmount, behavior: "smooth" });
+            }
         });
 
         marqueeWrapper.addEventListener("mouseleave", () => {
