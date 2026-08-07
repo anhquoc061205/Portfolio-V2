@@ -348,38 +348,72 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ----------------------------------------------------------------------
-    // 6. MARQUEE CAROUSEL MANUAL NAVIGATION & SMOOTH CONTROLS
+    // 6. SEAMLESS INFINITE LOOP MARQUEE CAROUSEL WITH CONTROLS
     // ----------------------------------------------------------------------
     const marqueeWrapper = document.getElementById("marquee-wrapper");
     const marqueeTrack = document.getElementById("marquee-track");
     const prevBtn = document.getElementById("marquee-prev-btn");
     const nextBtn = document.getElementById("marquee-next-btn");
 
-    if (marqueeWrapper && prevBtn && nextBtn) {
-        const scrollAmount = 370;
+    if (marqueeWrapper && marqueeTrack && prevBtn && nextBtn) {
+        // Disable CSS keyframe animation so JS handles smooth seamless looping
+        marqueeTrack.style.animation = "none";
 
-        prevBtn.addEventListener("click", () => {
-            if (marqueeTrack) marqueeTrack.classList.add("paused");
-            const maxScroll = marqueeWrapper.scrollWidth - marqueeWrapper.clientWidth;
-            if (marqueeWrapper.scrollLeft <= 25) {
-                marqueeWrapper.scrollTo({ left: maxScroll, behavior: "smooth" });
-            } else {
-                marqueeWrapper.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        let autoSpeed = 0.85; // Pixels per frame for smooth continuous auto scroll
+        let isUserHovered = false;
+        let isNavigating = false;
+        let navTimeout = null;
+
+        function autoLoop() {
+            if (!isUserHovered && !isNavigating) {
+                marqueeWrapper.scrollLeft += autoSpeed;
+                
+                // Calculate half width of track (size of one set of cards)
+                const halfWidth = marqueeTrack.scrollWidth / 2;
+                if (halfWidth > 0 && marqueeWrapper.scrollLeft >= halfWidth) {
+                    marqueeWrapper.scrollLeft -= halfWidth; // Instant seamless wrap-around to Set A
+                }
             }
-        });
+            requestAnimationFrame(autoLoop);
+        }
 
-        nextBtn.addEventListener("click", () => {
-            if (marqueeTrack) marqueeTrack.classList.add("paused");
-            const maxScroll = marqueeWrapper.scrollWidth - marqueeWrapper.clientWidth;
-            if (marqueeWrapper.scrollLeft >= maxScroll - 35) {
-                marqueeWrapper.scrollTo({ left: 0, behavior: "smooth" });
-            } else {
-                marqueeWrapper.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        requestAnimationFrame(autoLoop);
+
+        // Pause auto-scroll when user hovers or touches carousel
+        marqueeWrapper.addEventListener("mouseenter", () => { isUserHovered = true; });
+        marqueeWrapper.addEventListener("mouseleave", () => { isUserHovered = false; });
+        marqueeWrapper.addEventListener("touchstart", () => { isUserHovered = true; }, { passive: true });
+        marqueeWrapper.addEventListener("touchend", () => { isUserHovered = false; });
+
+        // Fast manual button navigation without backwards rewinding
+        function navigate(direction) {
+            isNavigating = true;
+            if (navTimeout) clearTimeout(navTimeout);
+
+            const halfWidth = marqueeTrack.scrollWidth / 2;
+            const cardScrollStep = 378; // Card width + gap
+
+            if (direction === "next") {
+                // When reaching cloned set, jump back to Set A instantly before scrolling forward
+                if (marqueeWrapper.scrollLeft >= halfWidth - 20) {
+                    marqueeWrapper.scrollLeft -= halfWidth;
+                }
+                marqueeWrapper.scrollBy({ left: cardScrollStep, behavior: "smooth" });
+            } else if (direction === "prev") {
+                // When at start of Set A, jump to Set B instantly before scrolling backward
+                if (marqueeWrapper.scrollLeft <= 20) {
+                    marqueeWrapper.scrollLeft += halfWidth;
+                }
+                marqueeWrapper.scrollBy({ left: -cardScrollStep, behavior: "smooth" });
             }
-        });
 
-        marqueeWrapper.addEventListener("mouseleave", () => {
-            if (marqueeTrack) marqueeTrack.classList.remove("paused");
-        });
+            // Resume smooth auto scroll 2.5s after last button click
+            navTimeout = setTimeout(() => {
+                isNavigating = false;
+            }, 2500);
+        }
+
+        prevBtn.addEventListener("click", () => navigate("prev"));
+        nextBtn.addEventListener("click", () => navigate("next"));
     }
 });
