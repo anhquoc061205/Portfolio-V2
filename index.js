@@ -348,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ----------------------------------------------------------------------
-    // 6. SEAMLESS INFINITE LOOP MARQUEE CAROUSEL WITH CONTROLS
+    // 6. SEAMLESS INFINITE ROTATING CAROUSEL (TRANSFORM TRANSLATE3D ENGINE)
     // ----------------------------------------------------------------------
     const marqueeWrapper = document.getElementById("marquee-wrapper");
     const marqueeTrack = document.getElementById("marquee-track");
@@ -356,64 +356,75 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextBtn = document.getElementById("marquee-next-btn");
 
     if (marqueeWrapper && marqueeTrack && prevBtn && nextBtn) {
-        // Disable CSS keyframe animation so JS handles smooth seamless looping
+        let currentX = 0;
+        let targetX = 0;
+        let isHovered = false;
+        let isAnimatingStep = false;
+        const autoSpeed = 0.9; // Pixels per frame (~55px/sec)
+
+        // Disable any CSS keyframe animation and overflow limits
         marqueeTrack.style.animation = "none";
 
-        let autoSpeed = 0.85; // Pixels per frame for smooth continuous auto scroll
-        let isUserHovered = false;
-        let isNavigating = false;
-        let navTimeout = null;
-
-        function autoLoop() {
-            if (!isUserHovered && !isNavigating) {
-                marqueeWrapper.scrollLeft += autoSpeed;
-                
-                // Calculate half width of track (size of one set of cards)
-                const halfWidth = marqueeTrack.scrollWidth / 2;
-                if (halfWidth > 0 && marqueeWrapper.scrollLeft >= halfWidth) {
-                    marqueeWrapper.scrollLeft -= halfWidth; // Instant seamless wrap-around to Set A
-                }
-            }
-            requestAnimationFrame(autoLoop);
+        function getHalfWidth() {
+            return marqueeTrack.scrollWidth / 2;
         }
 
-        requestAnimationFrame(autoLoop);
+        // 60fps Animation loop using translate3d
+        function render() {
+            const halfWidth = getHalfWidth();
 
-        // Pause auto-scroll when user hovers or touches carousel
-        marqueeWrapper.addEventListener("mouseenter", () => { isUserHovered = true; });
-        marqueeWrapper.addEventListener("mouseleave", () => { isUserHovered = false; });
-        marqueeWrapper.addEventListener("touchstart", () => { isUserHovered = true; }, { passive: true });
-        marqueeWrapper.addEventListener("touchend", () => { isUserHovered = false; });
+            if (halfWidth > 0) {
+                if (isAnimatingStep) {
+                    // Smoothly interpolate currentX toward targetX when user clicks Prev/Next
+                    currentX += (targetX - currentX) * 0.12;
 
-        // Fast manual button navigation without backwards rewinding
-        function navigate(direction) {
-            isNavigating = true;
-            if (navTimeout) clearTimeout(navTimeout);
-
-            const halfWidth = marqueeTrack.scrollWidth / 2;
-            const cardScrollStep = 378; // Card width + gap
-
-            if (direction === "next") {
-                // When reaching cloned set, jump back to Set A instantly before scrolling forward
-                if (marqueeWrapper.scrollLeft >= halfWidth - 20) {
-                    marqueeWrapper.scrollLeft -= halfWidth;
+                    // If close enough to target, finish step animation
+                    if (Math.abs(targetX - currentX) < 0.5) {
+                        currentX = targetX;
+                        isAnimatingStep = false;
+                    }
+                } else if (!isHovered) {
+                    // Continuous auto motion
+                    currentX -= autoSpeed;
+                    targetX = currentX;
                 }
-                marqueeWrapper.scrollBy({ left: cardScrollStep, behavior: "smooth" });
-            } else if (direction === "prev") {
-                // When at start of Set A, jump to Set B instantly before scrolling backward
-                if (marqueeWrapper.scrollLeft <= 20) {
-                    marqueeWrapper.scrollLeft += halfWidth;
+
+                // Seamless infinite loop wrap-around checks
+                while (currentX <= -halfWidth) {
+                    currentX += halfWidth;
+                    targetX += halfWidth;
                 }
-                marqueeWrapper.scrollBy({ left: -cardScrollStep, behavior: "smooth" });
+                while (currentX > 0) {
+                    currentX -= halfWidth;
+                    targetX -= halfWidth;
+                }
+
+                marqueeTrack.style.transform = `translate3d(${currentX}px, 0, 0)`;
             }
 
-            // Resume smooth auto scroll 2.5s after last button click
-            navTimeout = setTimeout(() => {
-                isNavigating = false;
-            }, 2500);
+            requestAnimationFrame(render);
         }
 
-        prevBtn.addEventListener("click", () => navigate("prev"));
-        nextBtn.addEventListener("click", () => navigate("next"));
+        requestAnimationFrame(render);
+
+        // Pause auto rotation on mouse hover & touch
+        marqueeWrapper.addEventListener("mouseenter", () => { isHovered = true; });
+        marqueeWrapper.addEventListener("mouseleave", () => { isHovered = false; });
+        marqueeWrapper.addEventListener("touchstart", () => { isHovered = true; }, { passive: true });
+        marqueeWrapper.addEventListener("touchend", () => { isHovered = false; });
+
+        // Next Button Click -> Smooth Step Forward (378px)
+        nextBtn.addEventListener("click", () => {
+            const stepAmount = 378;
+            targetX = (isAnimatingStep ? targetX : currentX) - stepAmount;
+            isAnimatingStep = true;
+        });
+
+        // Prev Button Click -> Smooth Step Backward (378px)
+        prevBtn.addEventListener("click", () => {
+            const stepAmount = 378;
+            targetX = (isAnimatingStep ? targetX : currentX) + stepAmount;
+            isAnimatingStep = true;
+        });
     }
 });
