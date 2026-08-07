@@ -346,4 +346,30 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // ----------------------------------------------------------------------
+    // 6. MARQUEE CAROUSEL MANUAL NAVIGATION & SMOOTH CONTROLS
+    // ----------------------------------------------------------------------
+    const marqueeWrapper = document.getElementById("marquee-wrapper");
+    const marqueeTrack = document.getElementById("marquee-track");
+    const prevBtn = document.getElementById("marquee-prev-btn");
+    const nextBtn = document.getElementById("marquee-next-btn");
+
+    if (marqueeWrapper && prevBtn && nextBtn) {
+        const scrollAmount = 370;
+
+        prevBtn.addEventListener("click", () => {
+            if (marqueeTrack) marqueeTrack.classList.add("paused");
+            marqueeWrapper.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        });
+
+        nextBtn.addEventListener("click", () => {
+            if (marqueeTrack) marqueeTrack.classList.add("paused");
+            marqueeWrapper.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        });
+
+        marqueeWrapper.addEventListener("mouseleave", () => {
+            if (marqueeTrack) marqueeTrack.classList.remove("paused");
+        });
+    }
 });
