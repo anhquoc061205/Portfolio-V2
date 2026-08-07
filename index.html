@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anh Quoc — Front-End Developer Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Anh Quoc - Front-End Developer specializing in modern, high-performance web applications with HTML5, CSS3, JavaScript ES6+, and React.">
+    <meta name="keywords" content="Anh Quoc, Frontend Developer, Web Developer Portfolio, React Developer, JavaScript, Web UI Design">
+    <meta name="author" content="Anh Quoc">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Anh Quoc — Front-End Developer Portfolio">
+    <meta property="og:description" content="Explore projects, skills, and frontend development expertise of Anh Quoc.">
+    <meta property="og:image" content="./assets/portfolio-preview.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Ambient Canvas Glow Background -->
+    <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="brand-logo" aria-label="Anh Quoc Portfolio Homepage">
+                <span class="logo-icon"><i class="fa-solid fa-code"></i></span>
+                <span class="logo-text">AnhQuoc<span class="highlight">.dev</span></span>
+            </a>
+
+            <nav class="nav-links" id="nav-menu" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About & Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#timeline" class="nav-link">Experience</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="./assets/Anh_Quoc_CV.pdf" download="Anh_Quoc_CV.pdf" class="btn btn-outline btn-sm" aria-label="Download CV Resume PDF">
+                    <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+                    <span>Download CV</span>
+                </a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars" id="bar-icon"></i>
+                    <i class="fa-solid fa-xmark" id="close-icon" style="display: none;"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge-status">
+                        <span class="status-dot"></span>
+                        <span>Available for Front-End Developer Opportunities</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Anh Quoc</span>
+                    </h1>
+
+                    <div class="typewriter-container">
+                        <span class="static-text">I build</span>
+                        <span class="typewriter-text" id="typewriter"></span>
+                        <span class="cursor" aria-hidden="true">|</span>
+                    </div>
+
+                    <p class="hero-description">
+                        Passionate Front-End Developer focused on creating fast, accessible, and visual-striking web applications. Crafting modern user interfaces with clean architecture and responsive design.
+                    </p>
+
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>Explore Projects</span>
+                            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                        </a>
+                        <a href="./assets/Anh_Quoc_CV.pdf" download class="btn btn-secondary">
+                            <i class="fa-solid fa-download" aria-hidden="true"></i>
+                            <span>Download CV</span>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                            <span>Contact Me</span>
+                        </a>
+                    </div>
+
+
+                </div>
+
+                <div class="hero-visual">
+                    <div class="glass-card hero-card">
+                        <div class="card-header-bar">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="card-title-bar">developer-profile.js</span>
+                        </div>
+                        <div class="code-preview">
+                            <pre><code><span class="code-keyword">const</span> developer = {
+  name: <span class="code-string">"Dang Anh Quoc"</span>,
+  role: <span class="code-string">"Front-End Developer"</span>,
+  github: <span class="code-string">"anhquoc061205"</span>,
+  repos: <span class="code-string">11</span>,
+  stack: [
+    <span class="code-string">"React.js / Vite"</span>,
+    <span class="code-string">"JavaScript ES6+"</span>,
+    <span class="code-string">"Tailwind CSS"</span>,
+    <span class="code-string">"Supabase / REST API"</span>
+  ],
+  deployed: <span class="code-string">"6 live projects"</span>,
+  status: <span class="code-string">"Open to work"</span>
+};</code></pre>
+                        </div>
+                        <div class="floating-tech-badges">
+                            <span class="tech-pill"><i class="fa-brands fa-react"></i> React</span>
+                            <span class="tech-pill"><i class="fa-brands fa-js"></i> ES6+</span>
+                            <span class="tech-pill"><i class="fa-brands fa-html5"></i> HTML5</span>
+                            <span class="tech-pill"><i class="fa-brands fa-css3-alt"></i> Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Skills Matrix -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">MY SKILLSET & MINDSET</span>
+                    <h2 class="section-title">Crafting Quality Front-End Experiences</h2>
+                    <p class="section-desc">I combine clean code structure, modern styling practices, and interactive user experiences to build robust web solutions.</p>
+                </div>
+
+                <div class="about-grid">
+                    <!-- Core Strengths -->
+                    <div class="about-card glass-card">
+                        <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>Performance & Clean Code</h3>
+                        <p>Writing scalable, easy-to-maintain HTML, CSS, and JS with focus on DOM optimization, fast initial loads, and smooth 60fps animations.</p>
+                    </div>
+
+                    <div class="about-card glass-card">
+                        <div class="card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                        <h3>Responsive & Accessibility</h3>
+                        <p>Building mobile-first layouts that adapt effortlessly to any screen size while ensuring ARIA standards for screen reader accessibility.</p>
+                    </div>
+
+                    <div class="about-card glass-card">
+                        <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3>Interactive Web UI</h3>
+                        <p>Creating engaging micro-interactions, smooth scroll transitions, dynamic carousels, and intuitive user interfaces that delight users.</p>
+                    </div>
+                </div>
+
+                <!-- Skills Matrix Categorized -->
+                <div class="skills-matrix-container">
+                    <h3 class="skills-title">Technical Proficiency</h3>
+                    
+                    <div class="skills-category-grid">
+                        <!-- Category 1: Frontend Core -->
+                        <div class="skills-group glass-card">
+                            <div class="group-header">
+                                <i class="fa-solid fa-layer-group"></i>
+                                <h4>Frontend Core</h4>
+                            </div>
+                            <ul class="skills-list">
+                                <li>
+                                    <span class="skill-name"><i class="fa-brands fa-html5"></i> HTML5 & Semantic Tags</span>
+                                    <span class="skill-level">Advanced</span>
+                                </li>
+                                <li>
+                                    <span class="skill-name"><i class="fa-brands fa-css3-alt"></i> CSS3 / Flexbox / Grid / Tailwind</span>
+                                    <span class="skill-level">Advanced</span>
+                                </li>
+                                <li>
+                                    <span class="skill-name"><i class="fa-brands fa-js"></i> JavaScript ES6+ / Async / Fetch</span>
+                                    <span class="skill-level">Proficient</span>
+                                </li>
+                                <li>
+                                    <span class="skill-name"><i class="fa-brands fa-react"></i> React.js / Vite / React Router</span>
+                                    <span class="skill-level">Proficient</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Category 2: Tools & Workflow -->
+                        <div class="skills-group glass-card">
+                            <div class="group-header">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                                <h4>Tools & Workflow</h4>
+                            </div>
+                            <ul class="skills-list">
+                                <li>
+                                    <span class="skill-name"><i class="fa-brands fa-git-alt"></i> Git & GitHub (11 repos)</span>
+                                    <span class="skill-level">Proficient</span>
+                                </li>
+                                <li>
+                                    <span class="skill-name"><i class="fa-solid fa-code"></i> VS Code & Dev Tools</span>
+                                    <span class="skill-level">Proficient</span>
+                                </li>
+                                <li>
+                                    <span class="skill-name"><i class="fa-solid fa-globe"></i> REST APIs / Axios / Supabase</span>
+                                    <span class="skill-level">Proficient</span>
+                                </li>
+                                <li>
+                                    <span class="skill-name"><i class="fa-brands fa-npm"></i> npm / Vite / Vercel Deploy</span>
+                                    <span class="skill-level">Proficient</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Category 3: Design & Best Practices -->
+                        <div class="skills-group glass-card">
+                            <div class="group-header">
+                                <i class="fa-solid fa-palette"></i>
+                                <h4>Design & Standards</h4>
+                            </div>
+                            <ul class="skills-list">
+                                <li>
+                                    <span class="skill-name"><i class="fa-brands fa-figma"></i> Figma UI Translation</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </li>
+                                <li>
+                                    <span class="skill-name"><i class="fa-solid fa-gauge-high"></i> Lighthouse Performance</span>
+                                    <span class="skill-level">Target 90+</span>
+                                </li>
+                                <li>
+                                    <span class="skill-name"><i class="fa-solid fa-universal-access"></i> Web Accessibility (a11y)</span>
+                                    <span class="skill-level">WCAG Focused</span>
+                                </li>
+                                <li>
+                                    <span class="skill-name"><i class="fa-solid fa-cube"></i> Modular CSS Architecture</span>
+                                    <span class="skill-level">Proficient</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Showcase Section (Infinite Marquee Slider) -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle"><i class="fa-solid fa-film"></i> FEATURED WORK</span>
+                    <h2 class="section-title">Projects Showcase</h2>
+                    <p class="section-desc">
+                        Explore featured web projects built with Vanilla JS, React, and HTML/CSS.
+                        <br>
+                        <strong class="highlight-text"><i class="fa-solid fa-hand-pointer"></i> Hover over the sliding row below to pause & inspect case studies!</strong>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Continuous Infinite Auto-Scrolling Marquee Container -->
+            <div class="marquee-wrapper" aria-label="Infinite scrolling project carousel. Hover to pause.">
+                <div class="marquee-track" id="marquee-track">
+
+                    <!-- Project 1: AI Study Hub (Main Complex Project) -->
+                    <article class="project-card glass-card">
+                        <div class="card-image-wrapper">
+                            <div class="project-badge">⭐ Main Project</div>
+                            <div class="project-img-placeholder aistudyhub-bg">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="tech-tags">
+                                <span class="tag">React.js / Vite</span>
+                                <span class="tag">Supabase</span>
+                                <span class="tag">Tailwind CSS</span>
+                                <span class="tag">Custom Domain</span>
+                            </div>
+                            <h3 class="project-title">AI Study Hub</h3>
+                            <p class="project-summary">Full-stack AI-powered study platform with Supabase backend, authentication, real-time data sync, and custom domain deployment — the most complex project in my portfolio.</p>
+                            <div class="case-study-highlights">
+                                <div><strong>Problem:</strong> Building a complete learning platform with user auth, content management, and AI integration.</div>
+                                <div><strong>Solution:</strong> React + Supabase architecture with real-time subscriptions, Tailwind UI components, and production deployment on custom domain.</div>
+                            </div>
+                            <div class="card-actions">
+                                <a href="https://aistudyhub.cloud/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                                <button class="btn btn-sm btn-outline open-modal-btn" data-project="aistudyhub">
+                                    <i class="fa-solid fa-circle-info"></i> Case Study
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Spotify Web Player Clone -->
+                    <article class="project-card glass-card">
+                        <div class="card-image-wrapper">
+                            <div class="project-badge">Featured</div>
+                            <div class="project-img-placeholder spotify-bg">
+                                <i class="fa-brands fa-spotify"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="tech-tags">
+                                <span class="tag">JavaScript ES6+</span>
+                                <span class="tag">HTML5 / CSS3</span>
+                                <span class="tag">Web Audio API</span>
+                            </div>
+                            <h3 class="project-title">Spotify Web Player Clone</h3>
+                            <p class="project-summary">Responsive music player clone with audio playback controls, dynamic playlist rendering, track switching, and volume management — fully deployed on Vercel.</p>
+                            <div class="case-study-highlights">
+                                <div><strong>Problem:</strong> Managing complex audio player states and smooth track switching without page reloads.</div>
+                                <div><strong>Solution:</strong> Modular JS event handlers with HTML5 Audio API, DOM playlist rendering, and responsive CSS layout.</div>
+                            </div>
+                            <div class="card-actions">
+                                <a href="https://spotify-clone-wheat-delta.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                                <button class="btn btn-sm btn-outline open-modal-btn" data-project="spotify">
+                                    <i class="fa-solid fa-circle-info"></i> Case Study
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Todo List App -->
+                    <article class="project-card glass-card">
+                        <div class="card-image-wrapper">
+                            <div class="project-badge alt">Full CRUD</div>
+                            <div class="project-img-placeholder todolist-bg">
+                                <i class="fa-solid fa-list-check"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="tech-tags">
+                                <span class="tag">JavaScript ES6+</span>
+                                <span class="tag">Axios</span>
+                                <span class="tag">REST API</span>
+                                <span class="tag">SweetAlert2</span>
+                            </div>
+                            <h3 class="project-title">Todo List CRUD App</h3>
+                            <p class="project-summary">Full CRUD task management app connecting to MockAPI REST backend with Axios, featuring Create/Read/Update/Delete operations and SweetAlert2 notifications.</p>
+                            <div class="case-study-highlights">
+                                <div><strong>Problem:</strong> Implementing persistent CRUD operations with a live backend API and user-friendly notifications.</div>
+                                <div><strong>Solution:</strong> Async/Await Axios calls to MockAPI, DOM rendering with innerHTML, and SweetAlert2 modal confirmations.</div>
+                            </div>
+                            <div class="card-actions">
+                                <a href="https://todo-list-ten-lilac-20.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                                <button class="btn btn-sm btn-outline open-modal-btn" data-project="todolist">
+                                    <i class="fa-solid fa-circle-info"></i> Case Study
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: Portfolio V1 -->
+                    <article class="project-card glass-card">
+                        <div class="card-image-wrapper">
+                            <div class="project-badge alt">Showcase</div>
+                            <div class="project-img-placeholder portfolio-bg">
+                                <i class="fa-solid fa-user-astronaut"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="tech-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS Variables</span>
+                                <span class="tag">Particles.js</span>
+                                <span class="tag">Vanilla JS</span>
+                            </div>
+                            <h3 class="project-title">Personal Portfolio V1</h3>
+                            <p class="project-summary">First personal developer portfolio with Particles.js animated background, dark-mode aesthetic, responsive mobile drawer navigation, and CSS custom properties.</p>
+                            <div class="case-study-highlights">
+                                <div><strong>Problem:</strong> Creating an eye-catching personal brand website with particle effects and mobile responsiveness.</div>
+                                <div><strong>Solution:</strong> Pure CSS Flexbox layout, Particles.js canvas background, and DOM event-driven mobile drawer toggle.</div>
+                            </div>
+                            <div class="card-actions">
+                                <a href="https://portfolio-lovat-mu-32.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                                <button class="btn btn-sm btn-outline open-modal-btn" data-project="portfoliov1">
+                                    <i class="fa-solid fa-circle-info"></i> Case Study
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 5: Fountain Education Platform -->
+                    <article class="project-card glass-card">
+                        <div class="card-image-wrapper">
+                            <div class="project-badge">Landing Page</div>
+                            <div class="project-img-placeholder fountain-bg">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="tech-tags">
+                                <span class="tag">HTML5 / CSS3</span>
+                                <span class="tag">jQuery / Slick</span>
+                                <span class="tag">Responsive</span>
+                            </div>
+                            <h3 class="project-title">Fountain Education Landing</h3>
+                            <p class="project-summary">Responsive education platform landing page with hero section, course category sliders, smooth scroll-to-top, and mobile hamburger navigation.</p>
+                            <div class="case-study-highlights">
+                                <div><strong>Problem:</strong> Building a professional multi-section education landing page with interactive category browsing.</div>
+                                <div><strong>Solution:</strong> Structured layout with Slick carousel for course categories and jQuery scroll handlers.</div>
+                            </div>
+                            <div class="card-actions">
+                                <a href="https://fountain-navy.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                                <button class="btn btn-sm btn-outline open-modal-btn" data-project="fountain">
+                                    <i class="fa-solid fa-circle-info"></i> Case Study
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 6: Wischool GPA Calculator -->
+                    <article class="project-card glass-card">
+                        <div class="card-image-wrapper">
+                            <div class="project-badge alt">Utility</div>
+                            <div class="project-img-placeholder wischool-bg">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="tech-tags">
+                                <span class="tag">HTML / CSS</span>
+                                <span class="tag">Vanilla JS</span>
+                                <span class="tag">DOM Logic</span>
+                            </div>
+                            <h3 class="project-title">Wischool GPA Calculator</h3>
+                            <p class="project-summary">Interactive school GPA calculator tool supporting 9 subjects, weighted average computation, and instant result display with clean input validation.</p>
+                            <div class="case-study-highlights">
+                                <div><strong>Problem:</strong> Building a reliable multi-subject GPA calculator with input validation and instant feedback.</div>
+                                <div><strong>Solution:</strong> Pure JavaScript DOM manipulation with form input handling and weighted average math logic.</div>
+                            </div>
+                            <div class="card-actions">
+                                <a href="https://wischool-one.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                                <button class="btn btn-sm btn-outline open-modal-btn" data-project="wischool">
+                                    <i class="fa-solid fa-circle-info"></i> Case Study
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- DUPLICATE SET FOR INFINITE LOOPING -->
+                    <article class="project-card glass-card" aria-hidden="true">
+                        <div class="card-image-wrapper"><div class="project-badge">⭐ Main Project</div><div class="project-img-placeholder aistudyhub-bg"><i class="fa-solid fa-robot"></i></div></div>
+                        <div class="card-body"><div class="tech-tags"><span class="tag">React.js / Vite</span><span class="tag">Supabase</span><span class="tag">Tailwind CSS</span></div><h3 class="project-title">AI Study Hub</h3><p class="project-summary">Full-stack AI-powered study platform with Supabase backend, authentication, and custom domain deployment.</p><div class="card-actions"><a href="https://aistudyhub.cloud/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div></div>
+                    </article>
+                    <article class="project-card glass-card" aria-hidden="true">
+                        <div class="card-image-wrapper"><div class="project-badge">Featured</div><div class="project-img-placeholder spotify-bg"><i class="fa-brands fa-spotify"></i></div></div>
+                        <div class="card-body"><div class="tech-tags"><span class="tag">JavaScript ES6+</span><span class="tag">HTML5 / CSS3</span><span class="tag">Web Audio API</span></div><h3 class="project-title">Spotify Web Player Clone</h3><p class="project-summary">Responsive music player clone with playback controls, dynamic playlists, and volume management.</p><div class="card-actions"><a href="https://spotify-clone-wheat-delta.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div></div>
+                    </article>
+                    <article class="project-card glass-card" aria-hidden="true">
+                        <div class="card-image-wrapper"><div class="project-badge alt">Full CRUD</div><div class="project-img-placeholder todolist-bg"><i class="fa-solid fa-list-check"></i></div></div>
+                        <div class="card-body"><div class="tech-tags"><span class="tag">JavaScript ES6+</span><span class="tag">Axios</span><span class="tag">REST API</span></div><h3 class="project-title">Todo List CRUD App</h3><p class="project-summary">Full CRUD app with MockAPI backend, Axios, and SweetAlert2 notifications.</p><div class="card-actions"><a href="https://todo-list-ten-lilac-20.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div></div>
+                    </article>
+                    <article class="project-card glass-card" aria-hidden="true">
+                        <div class="card-image-wrapper"><div class="project-badge alt">Showcase</div><div class="project-img-placeholder portfolio-bg"><i class="fa-solid fa-user-astronaut"></i></div></div>
+                        <div class="card-body"><div class="tech-tags"><span class="tag">HTML5</span><span class="tag">CSS Variables</span><span class="tag">Particles.js</span></div><h3 class="project-title">Personal Portfolio V1</h3><p class="project-summary">First portfolio with Particles.js background, dark-mode, and responsive mobile drawer.</p><div class="card-actions"><a href="https://portfolio-lovat-mu-32.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div></div>
+                    </article>
+                    <article class="project-card glass-card" aria-hidden="true">
+                        <div class="card-image-wrapper"><div class="project-badge">Landing Page</div><div class="project-img-placeholder fountain-bg"><i class="fa-solid fa-graduation-cap"></i></div></div>
+                        <div class="card-body"><div class="tech-tags"><span class="tag">HTML5 / CSS3</span><span class="tag">jQuery / Slick</span></div><h3 class="project-title">Fountain Education Landing</h3><p class="project-summary">Responsive education landing page with course category sliders and smooth scroll.</p><div class="card-actions"><a href="https://fountain-navy.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div></div>
+                    </article>
+                    <article class="project-card glass-card" aria-hidden="true">
+                        <div class="card-image-wrapper"><div class="project-badge alt">Utility</div><div class="project-img-placeholder wischool-bg"><i class="fa-solid fa-calculator"></i></div></div>
+                        <div class="card-body"><div class="tech-tags"><span class="tag">HTML / CSS</span><span class="tag">Vanilla JS</span></div><h3 class="project-title">Wischool GPA Calculator</h3><p class="project-summary">Interactive GPA calculator for 9 subjects with validation and instant results.</p><div class="card-actions"><a href="https://wischool-one.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div></div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Learning Timeline -->
+        <section id="timeline" class="timeline-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">MY JOURNEY</span>
+                    <h2 class="section-title">Education & Milestones</h2>
+                    <p class="section-desc">My continuous growth path in software development and frontend web technologies.</p>
+                </div>
+
+                <div class="timeline-wrapper">
+                    <!-- Timeline item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">2023 - 2024</span>
+                            <h3>HTML, CSS & JavaScript Fundamentals</h3>
+                            <p class="timeline-org">Self-Driven Learning & Practice</p>
+                            <p>Learned core web technologies: HTML5, CSS3 (Flexbox/Grid), JavaScript ES6+. Built early projects like Wischool GPA Calculator and Fountain Education landing page. Deployed first projects to Vercel.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"><i class="fa-solid fa-code-commit"></i></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">2024 - 2025</span>
+                            <h3>Vanilla JS Projects, REST APIs & Portfolio V1</h3>
+                            <p class="timeline-org">11 GitHub Repositories</p>
+                            <p>Built Spotify Web Player Clone (HTML5 Audio API), Todo List CRUD App (Axios + MockAPI), Portfolio V1 (Particles.js). Mastered async/await, DOM manipulation, and Git workflow. Earned Pull Shark x2, YOLO, Quickdraw GitHub badges.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"><i class="fa-solid fa-rocket"></i></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">2025 - Present</span>
+                            <h3>React, Supabase & Full-Stack Projects</h3>
+                            <p class="timeline-org">Production-Level Application Development</p>
+                            <p>Built AI Study Hub (React + Supabase + Tailwind CSS) deployed on custom domain aistudyhub.cloud. Developed Shopping app (React + TypeScript + Ant Design), ChatRoom (React + Supabase real-time). Learning backend fundamentals with Node.js and MySQL.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">GET IN TOUCH</span>
+                    <h2 class="section-title">Let's Connect & Work Together</h2>
+                    <p class="section-desc">I am currently open for Front-End Developer roles, internships, and project collaborations.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info glass-card">
+                        <h3>Contact Information</h3>
+                        <p>Feel free to reach out via email, social links, or submit the contact form.</p>
+
+                        <div class="info-list">
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div>
+                                    <span class="info-label">Email</span>
+                                    <a href="mailto:anhquoc.dev@gmail.com" class="info-val">anhquoc.dev@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fa-brands fa-github"></i></div>
+                                <div>
+                                    <span class="info-label">GitHub Repository</span>
+                                    <a href="https://github.com/anhquoc061205" target="_blank" rel="noopener noreferrer" class="info-val">github.com/anhquoc061205</a>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div>
+                                    <span class="info-label">Location</span>
+                                    <span class="info-val">Vietnam (Available for Remote / Hybrid)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://github.com/anhquoc061205" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="mailto:anhquoc.dev@gmail.com" aria-label="Send Email" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container glass-card">
+                        <form id="contact-form" class="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="name">Your Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                                <span class="error-msg" id="name-error">Please enter your name</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Your Email <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                                <span class="error-msg" id="email-error">Please enter a valid email address</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="Job Opportunity / Project Inquiry">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message <span class="required">*</span></label>
+                                <textarea id="message" name="message" rows="5" placeholder="Hi Anh Quoc, I saw your portfolio and would like to discuss..." required></textarea>
+                                <span class="error-msg" id="message-error">Please enter a message</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fa-solid fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <a href="#hero" class="brand-logo">
+                    <span class="logo-icon"><i class="fa-solid fa-code"></i></span>
+                    <span class="logo-text">AnhQuoc<span class="highlight">.dev</span></span>
+                </a>
+                <p>© 2026 Anh Quoc. Crafted with clean HTML5, CSS3 & JavaScript.</p>
+            </div>
+            <div class="footer-right">
+                <a href="#hero" class="back-to-top" aria-label="Back to top of page">
+                    <span>Back to top</span>
+                    <i class="fa-solid fa-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Popup -->
+    <div id="toast-notification" class="toast" role="alert" aria-live="polite">
+        <i class="fa-solid fa-circle-check toast-icon"></i>
+        <span id="toast-message">Your message has been sent successfully!</span>
+    </div>
+
+    <!-- Case Study Detail Modal -->
+    <div id="project-modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+            <div id="modal-body">
+                <!-- Dynamically injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript Files -->
+    <script src="./index.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
