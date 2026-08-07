@@ -860,7 +860,7 @@ body {
 /* Marquee Sliding Track */
 .marquee-track {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 1.75rem;
     width: max-content;
     will-change: transform;
@@ -870,7 +870,7 @@ body {
     cursor: grab;
 }
 
-/* Individual Project Card Link (Secondary Cards: Compact, No Empty Space!) */
+/* Individual Project Card Link */
 .project-card {
     width: 350px;
     flex-shrink: 0;
@@ -880,8 +880,7 @@ body {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
-    align-self: flex-start;
-    height: auto;
+    height: 100%;
     background: rgba(12, 16, 26, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-md);
@@ -894,9 +893,9 @@ body {
     box-shadow: 0 10px 30px rgba(6, 182, 212, 0.25);
 }
 
-/* Featured / Recent MAIN Project Card (REQUIREMENT 2: EXTREMELY PROMINENT & BRIGHT!) */
+/* Featured / Recent MAIN Project Card */
 .project-card.featured-project {
-    width: 440px;
+    width: 380px;
     border: 2px solid transparent;
     background: linear-gradient(145deg, rgba(16, 24, 42, 0.98), rgba(26, 38, 68, 0.98)) padding-box,
                 linear-gradient(135deg, #06b6d4, #6366f1, #ec4899) border-box;
