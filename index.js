@@ -214,15 +214,6 @@ document.addEventListener("DOMContentLoaded", () => {
             githubUrl: "https://github.com/anhquoc061205/Wischool"
         }
     };
-            keyFeatures: [
-                "Interactive metric widgets",
-                "Clean dark mode palette with high contrast elements",
-                "Responsive collapsible side menu"
-            ],
-            demoUrl: "#projects",
-            githubUrl: "https://github.com/anhquoc061205"
-        }
-    };
 
     function openModal(projectKey) {
         const data = caseStudiesData[projectKey];

@@ -278,12 +278,13 @@
             <div class="marquee-wrapper" aria-label="Infinite scrolling project carousel. Hover to pause.">
                 <div class="marquee-track" id="marquee-track">
 
-                    <!-- Project 1: AI Study Hub (Main Complex Project) -->
-                    <article class="project-card glass-card">
+                    <!-- Project 1: AI Study Hub (Main/Recent Project - HIGHLIGHTED) -->
+                    <a href="https://aistudyhub.cloud/" target="_blank" rel="noopener noreferrer" class="project-card glass-card featured-project">
                         <div class="card-image-wrapper">
-                            <div class="project-badge">⭐ Main Project</div>
-                            <div class="project-img-placeholder aistudyhub-bg">
-                                <i class="fa-solid fa-robot"></i>
+                            <div class="project-badge">⭐ Main & Recent Project</div>
+                            <img src="./assets/aistudyhub_preview.png" alt="AI Study Hub Preview" class="project-img">
+                            <div class="card-hover-overlay">
+                                <span>Visit Live Site <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                             </div>
                         </div>
                         <div class="card-body">
@@ -291,62 +292,43 @@
                                 <span class="tag">React.js / Vite</span>
                                 <span class="tag">Supabase</span>
                                 <span class="tag">Tailwind CSS</span>
-                                <span class="tag">Custom Domain</span>
+                                <span class="tag">aistudyhub.cloud</span>
                             </div>
-                            <h3 class="project-title">AI Study Hub</h3>
-                            <p class="project-summary">Full-stack AI-powered study platform with Supabase backend, authentication, real-time data sync, and custom domain deployment — the most complex project in my portfolio.</p>
+                            <h3 class="project-title">AI Study Hub <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i></h3>
+                            <p class="project-summary">Full-stack AI-powered study platform with Supabase backend, authentication, real-time data sync, and custom domain deployment — my latest and most comprehensive project.</p>
                             <div class="case-study-highlights">
-                                <div><strong>Problem:</strong> Building a complete learning platform with user auth, content management, and AI integration.</div>
-                                <div><strong>Solution:</strong> React + Supabase architecture with real-time subscriptions, Tailwind UI components, and production deployment on custom domain.</div>
-                            </div>
-                            <div class="card-actions">
-                                <a href="https://aistudyhub.cloud/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-                                </a>
-                                <button class="btn btn-sm btn-outline open-modal-btn" data-project="aistudyhub">
-                                    <i class="fa-solid fa-circle-info"></i> Case Study
-                                </button>
+                                <div><strong>Problem:</strong> Students need a centralized AI platform with auth and real-time sync across devices.</div>
+                                <div><strong>Solution:</strong> React + Supabase architecture with Tailwind UI components deployed at aistudyhub.cloud.</div>
                             </div>
                         </div>
-                    </article>
+                    </a>
 
                     <!-- Project 2: Spotify Web Player Clone -->
-                    <article class="project-card glass-card">
+                    <a href="https://spotify-clone-wheat-delta.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card glass-card">
                         <div class="card-image-wrapper">
                             <div class="project-badge">Featured</div>
-                            <div class="project-img-placeholder spotify-bg">
-                                <i class="fa-brands fa-spotify"></i>
+                            <img src="./assets/spotify_preview.png" alt="Spotify Web Player Clone Preview" class="project-img">
+                            <div class="card-hover-overlay">
+                                <span>Visit Live Site <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="tech-tags">
                                 <span class="tag">JavaScript ES6+</span>
-                                <span class="tag">HTML5 / CSS3</span>
                                 <span class="tag">Web Audio API</span>
                             </div>
-                            <h3 class="project-title">Spotify Web Player Clone</h3>
-                            <p class="project-summary">Responsive music player clone with audio playback controls, dynamic playlist rendering, track switching, and volume management — fully deployed on Vercel.</p>
-                            <div class="case-study-highlights">
-                                <div><strong>Problem:</strong> Managing complex audio player states and smooth track switching without page reloads.</div>
-                                <div><strong>Solution:</strong> Modular JS event handlers with HTML5 Audio API, DOM playlist rendering, and responsive CSS layout.</div>
-                            </div>
-                            <div class="card-actions">
-                                <a href="https://spotify-clone-wheat-delta.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-                                </a>
-                                <button class="btn btn-sm btn-outline open-modal-btn" data-project="spotify">
-                                    <i class="fa-solid fa-circle-info"></i> Case Study
-                                </button>
-                            </div>
+                            <h3 class="project-title">Spotify Web Player Clone <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i></h3>
+                            <p class="project-summary">Responsive music player clone with audio playback controls, dynamic playlists, track seekbar, and volume controls.</p>
                         </div>
-                    </article>
+                    </a>
 
                     <!-- Project 3: Todo List App -->
-                    <article class="project-card glass-card">
+                    <a href="https://todo-list-ten-lilac-20.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card glass-card">
                         <div class="card-image-wrapper">
                             <div class="project-badge alt">Full CRUD</div>
-                            <div class="project-img-placeholder todolist-bg">
-                                <i class="fa-solid fa-list-check"></i>
+                            <img src="./assets/todolist_preview.png" alt="Todo List CRUD App Preview" class="project-img">
+                            <div class="card-hover-overlay">
+                                <span>Visit Live Site <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                             </div>
                         </div>
                         <div class="card-body">
@@ -354,144 +336,94 @@
                                 <span class="tag">JavaScript ES6+</span>
                                 <span class="tag">Axios</span>
                                 <span class="tag">REST API</span>
-                                <span class="tag">SweetAlert2</span>
                             </div>
-                            <h3 class="project-title">Todo List CRUD App</h3>
-                            <p class="project-summary">Full CRUD task management app connecting to MockAPI REST backend with Axios, featuring Create/Read/Update/Delete operations and SweetAlert2 notifications.</p>
-                            <div class="case-study-highlights">
-                                <div><strong>Problem:</strong> Implementing persistent CRUD operations with a live backend API and user-friendly notifications.</div>
-                                <div><strong>Solution:</strong> Async/Await Axios calls to MockAPI, DOM rendering with innerHTML, and SweetAlert2 modal confirmations.</div>
-                            </div>
-                            <div class="card-actions">
-                                <a href="https://todo-list-ten-lilac-20.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-                                </a>
-                                <button class="btn btn-sm btn-outline open-modal-btn" data-project="todolist">
-                                    <i class="fa-solid fa-circle-info"></i> Case Study
-                                </button>
-                            </div>
+                            <h3 class="project-title">Todo List CRUD App <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i></h3>
+                            <p class="project-summary">Task management app connecting to MockAPI REST backend with Axios and SweetAlert2 notifications.</p>
                         </div>
-                    </article>
+                    </a>
 
                     <!-- Project 4: Portfolio V1 -->
-                    <article class="project-card glass-card">
+                    <a href="https://portfolio-lovat-mu-32.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card glass-card">
                         <div class="card-image-wrapper">
                             <div class="project-badge alt">Showcase</div>
-                            <div class="project-img-placeholder portfolio-bg">
-                                <i class="fa-solid fa-user-astronaut"></i>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="tech-tags">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS Variables</span>
-                                <span class="tag">Particles.js</span>
-                                <span class="tag">Vanilla JS</span>
-                            </div>
-                            <h3 class="project-title">Personal Portfolio V1</h3>
-                            <p class="project-summary">First personal developer portfolio with Particles.js animated background, dark-mode aesthetic, responsive mobile drawer navigation, and CSS custom properties.</p>
-                            <div class="case-study-highlights">
-                                <div><strong>Problem:</strong> Creating an eye-catching personal brand website with particle effects and mobile responsiveness.</div>
-                                <div><strong>Solution:</strong> Pure CSS Flexbox layout, Particles.js canvas background, and DOM event-driven mobile drawer toggle.</div>
-                            </div>
-                            <div class="card-actions">
-                                <a href="https://portfolio-lovat-mu-32.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-                                </a>
-                                <button class="btn btn-sm btn-outline open-modal-btn" data-project="portfoliov1">
-                                    <i class="fa-solid fa-circle-info"></i> Case Study
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 5: Fountain Education Platform -->
-                    <article class="project-card glass-card">
-                        <div class="card-image-wrapper">
-                            <div class="project-badge">Landing Page</div>
-                            <div class="project-img-placeholder fountain-bg">
-                                <i class="fa-solid fa-graduation-cap"></i>
+                            <img src="./assets/portfolio_v1_preview.png" alt="Personal Portfolio V1 Preview" class="project-img">
+                            <div class="card-hover-overlay">
+                                <span>Visit Live Site <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="tech-tags">
                                 <span class="tag">HTML5 / CSS3</span>
-                                <span class="tag">jQuery / Slick</span>
-                                <span class="tag">Responsive</span>
+                                <span class="tag">Particles.js</span>
                             </div>
-                            <h3 class="project-title">Fountain Education Landing</h3>
-                            <p class="project-summary">Responsive education platform landing page with hero section, course category sliders, smooth scroll-to-top, and mobile hamburger navigation.</p>
-                            <div class="case-study-highlights">
-                                <div><strong>Problem:</strong> Building a professional multi-section education landing page with interactive category browsing.</div>
-                                <div><strong>Solution:</strong> Structured layout with Slick carousel for course categories and jQuery scroll handlers.</div>
-                            </div>
-                            <div class="card-actions">
-                                <a href="https://fountain-navy.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-                                </a>
-                                <button class="btn btn-sm btn-outline open-modal-btn" data-project="fountain">
-                                    <i class="fa-solid fa-circle-info"></i> Case Study
-                                </button>
+                            <h3 class="project-title">Personal Portfolio V1 <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i></h3>
+                            <p class="project-summary">First personal developer portfolio featuring Particles.js animated canvas background and responsive drawer menu.</p>
+                        </div>
+                    </a>
+
+                    <!-- Project 5: Fountain Education Platform -->
+                    <a href="https://fountain-navy.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card glass-card">
+                        <div class="card-image-wrapper">
+                            <div class="project-badge">Landing Page</div>
+                            <img src="./assets/fountain_preview.png" alt="Fountain Education Preview" class="project-img">
+                            <div class="card-hover-overlay">
+                                <span>Visit Live Site <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                             </div>
                         </div>
-                    </article>
+                        <div class="card-body">
+                            <div class="tech-tags">
+                                <span class="tag">HTML5 / CSS3</span>
+                                <span class="tag">Slick Carousel</span>
+                            </div>
+                            <h3 class="project-title">Fountain Education Landing <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i></h3>
+                            <p class="project-summary">Responsive education platform landing page with hero banner, course category sliders, and smooth scroll navigation.</p>
+                        </div>
+                    </a>
 
                     <!-- Project 6: Wischool GPA Calculator -->
-                    <article class="project-card glass-card">
+                    <a href="https://wischool-one.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card glass-card">
                         <div class="card-image-wrapper">
                             <div class="project-badge alt">Utility</div>
-                            <div class="project-img-placeholder wischool-bg">
-                                <i class="fa-solid fa-calculator"></i>
+                            <img src="./assets/wischool_preview.png" alt="Wischool GPA Calculator Preview" class="project-img">
+                            <div class="card-hover-overlay">
+                                <span>Visit Live Site <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="tech-tags">
                                 <span class="tag">HTML / CSS</span>
                                 <span class="tag">Vanilla JS</span>
-                                <span class="tag">DOM Logic</span>
                             </div>
-                            <h3 class="project-title">Wischool GPA Calculator</h3>
-                            <p class="project-summary">Interactive school GPA calculator tool supporting 9 subjects, weighted average computation, and instant result display with clean input validation.</p>
-                            <div class="case-study-highlights">
-                                <div><strong>Problem:</strong> Building a reliable multi-subject GPA calculator with input validation and instant feedback.</div>
-                                <div><strong>Solution:</strong> Pure JavaScript DOM manipulation with form input handling and weighted average math logic.</div>
-                            </div>
-                            <div class="card-actions">
-                                <a href="https://wischool-one.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-                                </a>
-                                <button class="btn btn-sm btn-outline open-modal-btn" data-project="wischool">
-                                    <i class="fa-solid fa-circle-info"></i> Case Study
-                                </button>
-                            </div>
+                            <h3 class="project-title">Wischool GPA Calculator <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i></h3>
+                            <p class="project-summary">Interactive school GPA calculator tool supporting 9 subjects with weighted average computation logic.</p>
                         </div>
-                    </article>
+                    </a>
 
-                    <!-- DUPLICATE SET FOR INFINITE LOOPING -->
-                    <article class="project-card glass-card" aria-hidden="true">
-                        <div class="card-image-wrapper"><div class="project-badge">⭐ Main Project</div><div class="project-img-placeholder aistudyhub-bg"><i class="fa-solid fa-robot"></i></div></div>
-                        <div class="card-body"><div class="tech-tags"><span class="tag">React.js / Vite</span><span class="tag">Supabase</span><span class="tag">Tailwind CSS</span></div><h3 class="project-title">AI Study Hub</h3><p class="project-summary">Full-stack AI-powered study platform with Supabase backend, authentication, and custom domain deployment.</p><div class="card-actions"><a href="https://aistudyhub.cloud/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div></div>
-                    </article>
-                    <article class="project-card glass-card" aria-hidden="true">
-                        <div class="card-image-wrapper"><div class="project-badge">Featured</div><div class="project-img-placeholder spotify-bg"><i class="fa-brands fa-spotify"></i></div></div>
-                        <div class="card-body"><div class="tech-tags"><span class="tag">JavaScript ES6+</span><span class="tag">HTML5 / CSS3</span><span class="tag">Web Audio API</span></div><h3 class="project-title">Spotify Web Player Clone</h3><p class="project-summary">Responsive music player clone with playback controls, dynamic playlists, and volume management.</p><div class="card-actions"><a href="https://spotify-clone-wheat-delta.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div></div>
-                    </article>
-                    <article class="project-card glass-card" aria-hidden="true">
-                        <div class="card-image-wrapper"><div class="project-badge alt">Full CRUD</div><div class="project-img-placeholder todolist-bg"><i class="fa-solid fa-list-check"></i></div></div>
-                        <div class="card-body"><div class="tech-tags"><span class="tag">JavaScript ES6+</span><span class="tag">Axios</span><span class="tag">REST API</span></div><h3 class="project-title">Todo List CRUD App</h3><p class="project-summary">Full CRUD app with MockAPI backend, Axios, and SweetAlert2 notifications.</p><div class="card-actions"><a href="https://todo-list-ten-lilac-20.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div></div>
-                    </article>
-                    <article class="project-card glass-card" aria-hidden="true">
-                        <div class="card-image-wrapper"><div class="project-badge alt">Showcase</div><div class="project-img-placeholder portfolio-bg"><i class="fa-solid fa-user-astronaut"></i></div></div>
-                        <div class="card-body"><div class="tech-tags"><span class="tag">HTML5</span><span class="tag">CSS Variables</span><span class="tag">Particles.js</span></div><h3 class="project-title">Personal Portfolio V1</h3><p class="project-summary">First portfolio with Particles.js background, dark-mode, and responsive mobile drawer.</p><div class="card-actions"><a href="https://portfolio-lovat-mu-32.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div></div>
-                    </article>
-                    <article class="project-card glass-card" aria-hidden="true">
-                        <div class="card-image-wrapper"><div class="project-badge">Landing Page</div><div class="project-img-placeholder fountain-bg"><i class="fa-solid fa-graduation-cap"></i></div></div>
-                        <div class="card-body"><div class="tech-tags"><span class="tag">HTML5 / CSS3</span><span class="tag">jQuery / Slick</span></div><h3 class="project-title">Fountain Education Landing</h3><p class="project-summary">Responsive education landing page with course category sliders and smooth scroll.</p><div class="card-actions"><a href="https://fountain-navy.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div></div>
-                    </article>
-                    <article class="project-card glass-card" aria-hidden="true">
-                        <div class="card-image-wrapper"><div class="project-badge alt">Utility</div><div class="project-img-placeholder wischool-bg"><i class="fa-solid fa-calculator"></i></div></div>
-                        <div class="card-body"><div class="tech-tags"><span class="tag">HTML / CSS</span><span class="tag">Vanilla JS</span></div><h3 class="project-title">Wischool GPA Calculator</h3><p class="project-summary">Interactive GPA calculator for 9 subjects with validation and instant results.</p><div class="card-actions"><a href="https://wischool-one.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div></div>
-                    </article>
+                    <!-- DUPLICATE SET FOR INFINITE LOOPING MARQUEE -->
+                    <a href="https://aistudyhub.cloud/" target="_blank" rel="noopener noreferrer" class="project-card glass-card featured-project" aria-hidden="true">
+                        <div class="card-image-wrapper"><div class="project-badge">⭐ Main & Recent Project</div><img src="./assets/aistudyhub_preview.png" alt="AI Study Hub Preview" class="project-img"></div>
+                        <div class="card-body"><div class="tech-tags"><span class="tag">React.js / Vite</span><span class="tag">Supabase</span><span class="tag">Tailwind CSS</span></div><h3 class="project-title">AI Study Hub <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i></h3><p class="project-summary">Full-stack AI-powered study platform with Supabase backend, authentication, and custom domain deployment.</p></div>
+                    </a>
+                    <a href="https://spotify-clone-wheat-delta.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card glass-card" aria-hidden="true">
+                        <div class="card-image-wrapper"><div class="project-badge">Featured</div><img src="./assets/spotify_preview.png" alt="Spotify Web Player Preview" class="project-img"></div>
+                        <div class="card-body"><div class="tech-tags"><span class="tag">JavaScript ES6+</span><span class="tag">Web Audio API</span></div><h3 class="project-title">Spotify Web Player Clone <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i></h3><p class="project-summary">Responsive music player clone with audio playback controls and dynamic playlists.</p></div>
+                    </a>
+                    <a href="https://todo-list-ten-lilac-20.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card glass-card" aria-hidden="true">
+                        <div class="card-image-wrapper"><div class="project-badge alt">Full CRUD</div><img src="./assets/todolist_preview.png" alt="Todo List CRUD Preview" class="project-img"></div>
+                        <div class="card-body"><div class="tech-tags"><span class="tag">JavaScript ES6+</span><span class="tag">Axios</span><span class="tag">REST API</span></div><h3 class="project-title">Todo List CRUD App <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i></h3><p class="project-summary">Task management app connecting to MockAPI REST backend with Axios.</p></div>
+                    </a>
+                    <a href="https://portfolio-lovat-mu-32.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card glass-card" aria-hidden="true">
+                        <div class="card-image-wrapper"><div class="project-badge alt">Showcase</div><img src="./assets/portfolio_v1_preview.png" alt="Portfolio V1 Preview" class="project-img"></div>
+                        <div class="card-body"><div class="tech-tags"><span class="tag">HTML5 / CSS3</span><span class="tag">Particles.js</span></div><h3 class="project-title">Personal Portfolio V1 <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i></h3><p class="project-summary">First portfolio with Particles.js background animation and dark mode design.</p></div>
+                    </a>
+                    <a href="https://fountain-navy.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card glass-card" aria-hidden="true">
+                        <div class="card-image-wrapper"><div class="project-badge">Landing Page</div><img src="./assets/fountain_preview.png" alt="Fountain Education Preview" class="project-img"></div>
+                        <div class="card-body"><div class="tech-tags"><span class="tag">HTML5 / CSS3</span><span class="tag">Slick Carousel</span></div><h3 class="project-title">Fountain Education Landing <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i></h3><p class="project-summary">Responsive education landing page with course category sliders.</p></div>
+                    </a>
+                    <a href="https://wischool-one.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card glass-card" aria-hidden="true">
+                        <div class="card-image-wrapper"><div class="project-badge alt">Utility</div><img src="./assets/wischool_preview.png" alt="Wischool GPA Preview" class="project-img"></div>
+                        <div class="card-body"><div class="tech-tags"><span class="tag">HTML / CSS</span><span class="tag">Vanilla JS</span></div><h3 class="project-title">Wischool GPA Calculator <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i></h3><p class="project-summary">Interactive GPA calculator for 9 subjects with instant calculation logic.</p></div>
+                    </a>
 
                 </div>
             </div>
