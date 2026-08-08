@@ -309,7 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (contactForm) {
-        contactForm.addEventListener("submit", (e) => {
+        contactForm.addEventListener("submit", async (e) => {
             e.preventDefault();
 
             let isValid = true;
@@ -317,6 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const nameInput = document.getElementById("name");
             const emailInput = document.getElementById("email");
             const messageInput = document.getElementById("message");
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
 
             // Reset errors
             document.querySelectorAll(".form-group").forEach(fg => fg.classList.remove("error"));
@@ -341,8 +342,32 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             if (isValid) {
-                contactForm.reset();
-                showToast("Thank you! Your message has been sent successfully.");
+                const originalContent = submitBtn.innerHTML;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending...</span>`;
+
+                try {
+                    const formData = new FormData(contactForm);
+
+                    const response = await fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        body: formData
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok && data.success) {
+                        contactForm.reset();
+                        showToast("Thank you! Your message has been sent directly to Anh Quoc's Gmail.");
+                    } else {
+                        showToast("Error sending message: " + (data.message || "Please try again later."));
+                    }
+                } catch (err) {
+                    showToast("Failed to connect. Please check your internet connection.");
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalContent;
+                }
             }
         });
     }
