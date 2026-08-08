@@ -547,32 +547,52 @@
                         <form id="contact-form" class="contact-form" novalidate>
                             <input type="hidden" name="access_key" value="14f09064-a531-41e8-91f8-0cf0407ce2c5">
                             <input type="hidden" name="from_name" value="Anh Quoc Portfolio Website">
+                            <input type="hidden" name="subject" value="💼 [PORTFOLIO INQUIRY] New Contact Message">
 
-                            <div class="form-group">
-                                <label for="name">Your Name <span class="required">*</span></label>
-                                <input type="text" id="name" name="name" placeholder="John Doe" required>
-                                <span class="error-msg" id="name-error">Please enter your name</span>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Your Name / Contact Person <span class="required">*</span></label>
+                                    <input type="text" id="name" name="name" placeholder="e.g. John Doe / Recruiter" required>
+                                    <span class="error-msg" id="name-error">Please enter your name</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Work Email <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                                    <span class="error-msg" id="email-error">Please enter a valid email address</span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="company">Company / Organization</label>
+                                    <input type="text" id="company" name="company" placeholder="e.g. TechCorp Solutions Ltd.">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inquiry_type">Inquiry Type</label>
+                                    <select id="inquiry_type" name="inquiry_type">
+                                        <option value="Full-Time Hiring / Internship">Full-Time Hiring / Internship</option>
+                                        <option value="Freelance Web Development">Freelance Web Development</option>
+                                        <option value="Project Collaboration">Project Collaboration</option>
+                                        <option value="General Inquiry">General Inquiry</option>
+                                    </select>
+                                </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="email">Your Email <span class="required">*</span></label>
-                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
-                                <span class="error-msg" id="email-error">Please enter a valid email address</span>
+                                <label for="subject_input">Subject Line</label>
+                                <input type="text" id="subject_input" name="custom_subject" placeholder="e.g. Front-End Developer Role / Project Inquiry">
                             </div>
 
                             <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" placeholder="Job Opportunity / Project Inquiry">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Message <span class="required">*</span></label>
-                                <textarea id="message" name="message" rows="5" placeholder="Hi Anh Quoc, I saw your portfolio and would like to discuss..." required></textarea>
-                                <span class="error-msg" id="message-error">Please enter a message</span>
+                                <label for="message">Message Details <span class="required">*</span></label>
+                                <textarea id="message" name="message" rows="5" placeholder="Hi Anh Quoc, we reviewed your portfolio and would like to discuss..." required></textarea>
+                                <span class="error-msg" id="message-error">Please enter your message details</span>
                             </div>
 
                             <button type="submit" class="btn btn-primary btn-block">
-                                <i class="fa-solid fa-paper-plane"></i> <span>Send Message</span>
+                                <i class="fa-solid fa-paper-plane"></i> <span>Send Business Inquiry</span>
                             </button>
                         </form>
                     </div>

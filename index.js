@@ -344,10 +344,19 @@ document.addEventListener("DOMContentLoaded", () => {
             if (isValid) {
                 const originalContent = submitBtn.innerHTML;
                 submitBtn.disabled = true;
-                submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending...</span>`;
+                submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending Business Inquiry...</span>`;
 
                 try {
                     const formData = new FormData(contactForm);
+
+                    // Set dynamic reply-to header so clicking "Reply" in Gmail replies directly to visitor
+                    formData.append("replyto", emailInput.value.trim());
+
+                    // Format corporate email subject dynamically
+                    const inquiryType = document.getElementById("inquiry_type")?.value || "Inquiry";
+                    const customSubject = document.getElementById("subject_input")?.value.trim();
+                    const subjectTitle = customSubject ? `${inquiryType} - ${customSubject}` : `${inquiryType} from ${nameInput.value.trim()}`;
+                    formData.set("subject", `💼 [PORTFOLIO INQUIRY] ${subjectTitle}`);
 
                     const response = await fetch("https://api.web3forms.com/submit", {
                         method: "POST",
@@ -358,7 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     if (response.ok && data.success) {
                         contactForm.reset();
-                        showToast("Thank you! Your message has been sent directly to Anh Quoc's Gmail.");
+                        showToast("Thank you! Your business inquiry has been delivered directly to Anh Quoc's Inbox.");
                     } else {
                         showToast("Error sending message: " + (data.message || "Please try again later."));
                     }
