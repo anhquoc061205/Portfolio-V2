@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const typewriterElement = document.getElementById("typewriter");
     if (typewriterElement) {
         const phrases = [
-            "Front-End Applications.",
-            "Responsive Web Interfaces.",
-            "Interactive UI Experiences.",
-            "Performant Web Products."
+            "Full-Stack Web Applications.",
+            "Scalable Backend Systems.",
+            "RESTful APIs & Integrations.",
+            "Interactive UI Experiences."
         ];
         let phraseIndex = 0;
         let charIndex = 0;
@@ -212,6 +212,56 @@ document.addEventListener("DOMContentLoaded", () => {
             ],
             demoUrl: "https://wischool-one.vercel.app",
             githubUrl: "https://github.com/anhquoc061205/Wischool"
+        },
+        chatroom: {
+            title: "Chat Room",
+            badge: "Real-time App",
+            tech: ["React.js", "Vite", "Real-time Messaging", "User Authentication"],
+            problem: "Building a real-time communication platform requires handling live message delivery, user authentication, online presence tracking, and responsive chat UI — all with smooth UX.",
+            solution: "Developed a modern React chat application with Vite for fast build tooling, real-time messaging capabilities, user authentication flow, and a clean dark-themed chat interface.",
+            keyFeatures: [
+                "Real-time message sending and receiving",
+                "User authentication with login system",
+                "Modern React-based responsive UI",
+                "Live chat room with multiple users",
+                "Deployed on Vercel with live preview"
+            ],
+            demoUrl: "https://chat-room-ivory-pi.vercel.app",
+            githubUrl: "https://github.com/anhquoc061205"
+        },
+        shopping: {
+            title: "Shopping App",
+            badge: "E-Commerce",
+            tech: ["React.js", "Vite", "TypeScript", "Ant Design", "React Router"],
+            problem: "Building a modern e-commerce interface requires product catalog browsing, shopping cart management, responsive product grids, and smooth user interactions — all with type-safe code.",
+            solution: "Developed a React + TypeScript shopping application using Vite for fast development, Ant Design for polished UI components, React Router for SPA navigation, and clean component architecture for maintainability.",
+            keyFeatures: [
+                "Product catalog with grid/list view browsing",
+                "Shopping cart with add/remove/quantity management",
+                "TypeScript for type-safe component development",
+                "Ant Design UI components for professional look",
+                "Responsive layout for mobile and desktop",
+                "Deployed on Vercel with live preview"
+            ],
+            demoUrl: "https://shopping-di8n.vercel.app",
+            githubUrl: "https://github.com/anhquoc061205"
+        },
+        arduinocar: {
+            title: "Arduino IoT Smart Car",
+            badge: "IoT / Hardware",
+            tech: ["Arduino C++", "Bluetooth HC-05", "Ultrasonic HC-SR04", "SG90 Servo", "TCRT5000 Sensors", "L298N Driver"],
+            problem: "Designing an autonomous robot vehicle requires coordinating real-time inputs from line-tracking IR sensors and ultrasonic collision-avoidance sensors while maintaining manual override support via wireless Bluetooth communication without latency.",
+            solution: "Implemented a custom dual-mode state machine in Arduino C++ utilizing SoftwareSerial for Bluetooth commands, timer-based safety timeouts, dynamic servo sweeping for obstacle avoidance path-finding, and analog speed calibration.",
+            keyFeatures: [
+                "Autonomous black line following using 3-sensor TCRT5000 array",
+                "Dynamic collision avoidance by scanning 180 degrees via servo & ultrasonic sensor",
+                "Real-time remote control via Bluetooth HC-05 with mobile terminal",
+                "Timeout safety mechanism auto-reverting to autonomous mode after 5s idle",
+                "Efficient L298N dual H-bridge motor driver interface for speed and direction",
+                "Comprehensive code documentation and wiring schematic in repository"
+            ],
+            demoUrl: "https://www.youtube.com/watch?v=7AJz41wZ6Pc",
+            githubUrl: "https://github.com/anhquoc061205/Arduino_iot_car"
         }
     };
 
